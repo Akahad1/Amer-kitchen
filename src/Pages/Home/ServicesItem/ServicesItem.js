@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import AddReview from '../../AddReview/AddReview';
 
 const ServicesItem = ({service}) => {
     const {title,img,price,description,_id}=service

@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import AddReview from '../AddReview/AddReview';
 import { AuthContext } from '../AuthProvidor/AuthProvidor';
+import SpecificServiceReview from '../SpecificServiceReview/SpecificServiceReview';
 
 
 const ServicesDetails = () => {
@@ -22,6 +23,9 @@ const ServicesDetails = () => {
   
 
 
+</div>
+<div>
+    <SpecificServiceReview id={_id}></SpecificServiceReview>
 </div>
 <div className='mt-3'>
     {

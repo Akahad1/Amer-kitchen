@@ -11,15 +11,18 @@ const auth =getAuth(app)
 export const AuthContext =createContext()
 const AuthProvidor = ({children}) => {
     const [user,setUser]=useState()
+    const [looder,setLooder]=useState(true)
 
     // createUser
     const createUser =(email, password)=>{
+        setLooder(true)
         return createUserWithEmailAndPassword(auth, email, password)
 
     }
 
     // signin
     const logIn =(email,password)=>{
+        setLooder(true)
         return signInWithEmailAndPassword(auth, email, password)
 
     }
@@ -42,6 +45,7 @@ const AuthProvidor = ({children}) => {
             console.log(currentUser)
     
             setUser(currentUser)
+            setLooder(false)
 
         } )
         return ()=>unSubcariber
@@ -54,6 +58,7 @@ const AuthProvidor = ({children}) => {
         logIn,
         logOut,
         googleLogin,
+        looder,
     }
     return (
         <AuthContext.Provider value={authInfo}>

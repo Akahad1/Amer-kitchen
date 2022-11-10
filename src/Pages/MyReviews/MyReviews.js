@@ -23,30 +23,38 @@ const MyReviews = () => {
 
             </div>
 
-
-            <table className="table w-full my-5">
+            {
+                reviews.length>0 ?<table className="table w-full my-5">
     
-    <thead>
-      <tr>
-        
-        <th>Service Name</th>
-        <th>Review</th>
-        <th>Star</th>
-        <th>Edit Item</th>
-        <th>Delelet Item</th>
-      </tr>
-    </thead>
-    <tbody>
-    {
-                  reviews.map(reviewsItem=><MyReview
-                    key={reviewsItem._id}
-                    reviewsItem={reviewsItem}
+                <thead>
+                  <tr>
                     
-                    ></MyReview>)
-            }   
-        
-    </tbody>
-  </table>
+                    <th>Service Name</th>
+                    <th>Review</th>
+                    <th>Star</th>
+                    <th>Edit Item</th>
+                    <th>Delelet Item</th>
+                  </tr>
+                </thead>
+                <tbody>
+                {
+                              reviews.map(reviewsItem=><MyReview
+                                key={reviewsItem._id}
+                                reviewsItem={reviewsItem}
+                                
+                                ></MyReview>)
+                        }   
+                    
+                </tbody>
+              </table>
+              : <div className='my-5 text-red-600 text-2xl'> 
+              <p>MY Have No Review </p>
+  
+              </div>
+            }
+
+
+            
             
             
                

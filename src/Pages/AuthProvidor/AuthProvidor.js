@@ -35,12 +35,14 @@ const AuthProvidor = ({children}) => {
 
     // logOut
     const logOut=()=>{
+    
         return signOut(auth)
 
     }
     // profile update
 
     const profileUpdate =(profile)=>{
+        setLooder(true)
         return updateProfile(auth.currentUser,profile)
     }
 

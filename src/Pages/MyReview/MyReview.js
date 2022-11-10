@@ -1,9 +1,10 @@
 import React from 'react';
 import {FaStar } from 'react-icons/fa';
+import useTitle from '../../useTitel/UseTitel';
 
 const MyReview = ({reviewsItem,deletItem}) => {
-    const {servesName,
-        review,star,_id}=reviewsItem
+    useTitle('My Review')
+    const {servesName,review,star,_id}=reviewsItem
     return (
         <tr>
         

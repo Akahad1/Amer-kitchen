@@ -1,10 +1,13 @@
 import React from 'react';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import useTitle from '../../useTitel/UseTitel';
 import { AuthContext } from '../AuthProvidor/AuthProvidor';
 
 const SignUp = () => {
     const {createUser,profileUpdate}=useContext(AuthContext)
+
+    useTitle('Sign Up')
 
 
     const singupHandle=(event)=>{
@@ -14,7 +17,7 @@ const SignUp = () => {
         const email =form.email.value;
         const photoUrl =form.photourl.value;
         const password =form.password.value;
-        // console.log(name,email,password,photoUrl)
+        console.log(name,email,password,photoUrl)
        
         createUser(email,password)
         .then(result=>{
@@ -35,7 +38,7 @@ const SignUp = () => {
       }
       profileUpdate(profile)
       .then(result=>{
-        const user =result.user
+        const user =result.user;
         console.log(user)})
       .catch(error=>console.log(error))
 

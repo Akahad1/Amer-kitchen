@@ -1,4 +1,6 @@
 import React from 'react';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 import { Link } from 'react-router-dom';
 import AddReview from '../../AddReview/AddReview';
 
@@ -7,7 +9,12 @@ const ServicesItem = ({service}) => {
     return (
         <div>
             <div className="card  w-96 bg-base-100 shadow-xl">
-  <figure><img src={img} alt="Shoes" /></figure>
+            <PhotoProvider>
+      <PhotoView src="/1.jpg">
+      <img src={img} alt="Shoes" />
+      </PhotoView>
+    </PhotoProvider>
+  
   <div className="card-body">
     <h2 className="card-title">{title}</h2>
     <h2 className="card-title">Price: ${price}</h2>

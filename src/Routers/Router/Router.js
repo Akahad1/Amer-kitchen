@@ -3,6 +3,7 @@ import Main from "../../Layout/Main/Main";
 import AddReview from "../../Pages/AddReview/AddReview";
 import AddService from "../../Pages/AddService/AddService";
 import AllServices from "../../Pages/AllServices/AllServices";
+import Blogs from "../../Pages/Blogs/Blogs";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
 import MyReviews from "../../Pages/MyReviews/MyReviews";
@@ -22,7 +23,7 @@ loader:({params})=>fetch(`http://localhost:5000/allservices/${params.id}`)
 },
 {path:'/addservice',element:<PrivetRouter><AddService></AddService></PrivetRouter>},
 {path:'/myreviews',element:<PrivetRouter><MyReviews></MyReviews></PrivetRouter>}
-
+,{path:'/blogs',element:<Blogs></Blogs>}
     ]
 },
 

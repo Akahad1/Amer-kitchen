@@ -1,9 +1,9 @@
 import React from 'react';
 import {FaStar } from 'react-icons/fa';
 
-const MyReview = ({reviewsItem}) => {
+const MyReview = ({reviewsItem,deletItem}) => {
     const {servesName,
-        review,star}=reviewsItem
+        review,star,_id}=reviewsItem
     return (
         <tr>
         
@@ -16,7 +16,7 @@ const MyReview = ({reviewsItem}) => {
         </td>
         <td><button className='btn'>Edit</button></td>
         <td><label>
-            <input  className="btn" value="Delete" />
+            <input onClick={()=>deletItem(_id)} className="btn" value="Delete" />
           </label></td>
         
       </tr>

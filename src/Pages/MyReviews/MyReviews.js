@@ -16,6 +16,29 @@ const MyReviews = () => {
         .then(data=>{setReviews(data)
         })
     },[user?.email])
+
+
+    // nerdisto item delete kora
+    const deletItem =(id)=>{
+      const prossed =window.confirm("Are you sure, cancel this oder")
+      if(prossed){
+        fetch(`http://localhost:5000/reviews/${id}`,{
+        method: "DELETE",
+      })
+      .then(res=>res.json())
+      .then(data=>{
+        console.log(data)
+        if(data.deletedCount){
+          alert('delete sucssfuly')
+          const remainig =reviews.filter(odr=> odr._id !== id)
+          setReviews(remainig)
+        }
+      })
+
+      
+    }
+
+    }
     return (
         <div>
             <div className='my-5 text-red-600 text-2xl'> 
@@ -41,6 +64,7 @@ const MyReviews = () => {
                               reviews.map(reviewsItem=><MyReview
                                 key={reviewsItem._id}
                                 reviewsItem={reviewsItem}
+                                deletItem={deletItem}
                                 
                                 ></MyReview>)
                         }   

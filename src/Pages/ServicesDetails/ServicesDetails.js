@@ -25,7 +25,7 @@ const ServicesDetails = () => {
 </div>
 <div className='mt-3'>
     {
-        user?.uid ?<AddReview id={_id}></AddReview>:<p className='text-red-500 text-2xl italic hover:not-italic'>Pleses LogIn to Add review</p>
+        user?.uid ?<AddReview id={_id} title={title}></AddReview>:<p className='text-red-500 text-2xl italic hover:not-italic'>Pleses LogIn to Add review</p>
 
     }
     

@@ -2,7 +2,7 @@ import React from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../AuthProvidor/AuthProvidor';
 
-const AddReview = ({id}) => {
+const AddReview = ({id,title}) => {
     const {user}=useContext(AuthContext)
     const addReviewHandler=(event)=>{
         event.preventDefault()
@@ -13,11 +13,13 @@ const AddReview = ({id}) => {
 
         const reviews={
             servesid :id,
+            servesName:title,
             review,
             star,
+            photoURl:user?.photoURL,
             name: user?.displayName,
             email: user?.email,
-            photoURl:user?.photoURl
+            
     
         }
 

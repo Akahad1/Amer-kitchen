@@ -3,9 +3,11 @@ Amer kitchen
 * what are you using?1
  desiy ui and Tailwind css
  * live link
+ https://amer-kitchen.web.app
  * what is Project about?
  it is about service
  * server link
+ https://amer-kitchen-server.vercel.app
 
 # Getting Started with Create React App
 

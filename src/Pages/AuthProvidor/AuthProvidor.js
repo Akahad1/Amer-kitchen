@@ -1,5 +1,5 @@
 import React from 'react';
-import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword,signOut,onAuthStateChanged,signInWithPopup,GoogleAuthProvider} from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword,signOut,onAuthStateChanged,signInWithPopup,GoogleAuthProvider, updateProfile} from "firebase/auth";
 import { createContext } from 'react';
 import app from '../../fairebase.config';
 import { useState } from 'react';
@@ -38,6 +38,11 @@ const AuthProvidor = ({children}) => {
         return signOut(auth)
 
     }
+    // profile update
+
+    const profileUpdate =(profile)=>{
+        return updateProfile(auth.currentUser,profile)
+    }
 
     // chageuser
     useEffect(()=>{
@@ -58,6 +63,7 @@ const AuthProvidor = ({children}) => {
         logIn,
         logOut,
         googleLogin,
+        profileUpdate,
         looder,
     }
     return (

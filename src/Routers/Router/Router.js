@@ -26,5 +26,6 @@ loader:({params})=>fetch(`http://localhost:5000/allservices/${params.id}`)
 ,{path:'/blogs',element:<Blogs></Blogs>}
     ]
 },
+{path: '*' ,element: 'You Press Rong route'}
 
 ])

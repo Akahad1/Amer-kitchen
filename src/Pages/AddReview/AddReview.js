@@ -16,6 +16,7 @@ const AddReview = ({id}) => {
             review,
             star,
             name: user?.displayName,
+            email: user?.email,
             photoURl:user?.photoURl
     
         }

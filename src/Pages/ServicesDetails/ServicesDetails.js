@@ -1,9 +1,12 @@
 import React from 'react';
+import { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import AddReview from '../AddReview/AddReview';
+import { AuthContext } from '../AuthProvidor/AuthProvidor';
 
 
 const ServicesDetails = () => {
+    const {user}=useContext(AuthContext)
     const servicesItem =useLoaderData()
     const {img,title,price,description,_id} =servicesItem;
     return (
@@ -20,8 +23,12 @@ const ServicesDetails = () => {
 
 
 </div>
-<div>
-    <AddReview id={_id}></AddReview>
+<div className='mt-3'>
+    {
+        user?.uid ?<AddReview id={_id}></AddReview>:<p className='text-red-500 text-2xl italic hover:not-italic'>Pleses LogIn to Add review</p>
+
+    }
+    
 </div>
             
             

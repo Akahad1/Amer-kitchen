@@ -11,9 +11,9 @@ const MyReviews = () => {
     console.log(reviews)
     
     useEffect(()=>{
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`,{
+        fetch(`https://amer-kitchen-server.vercel.app/reviews?email=${user?.email}`,{
           headers:{
-            authroization:  `Bearer ${localStorage.getItem('GineusToken')}`
+            authroization:  `Bearer ${localStorage.getItem('AmerToken')}`
           }
         })
         .then(res=>res.json())
@@ -26,7 +26,7 @@ const MyReviews = () => {
     const deletItem =(id)=>{
       const prossed =window.confirm("Are you sure, cancel this oder")
       if(prossed){
-        fetch(`http://localhost:5000/reviews/${id}`,{
+        fetch(`https://amer-kitchen-server.vercel.app/reviews/${id}`,{
         method: "DELETE",
       })
       .then(res=>res.json())

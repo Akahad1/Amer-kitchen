@@ -7,7 +7,7 @@ import SpecificServiceReviewItem from '../SpecificServiceReviewItem/SpecificServ
 const SpecificServiceReview = ({id}) => {
     const [reviews,setReviews]=useState([])
     useEffect(()=>{
-        fetch(`http://localhost:5000/reviews/${id}`)
+        fetch(`https://amer-kitchen-server.vercel.app/reviews/${id}`)
         .then(res=>res.json())
         .then(data=>setReviews(data))
     },[])

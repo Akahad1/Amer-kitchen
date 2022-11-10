@@ -6,7 +6,7 @@ import AllServicesItem from './AllservicesItem/AllServicesItem';
 const AllServices = () => {
     const [services,setServices]=useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/allservices')
+        fetch('https://amer-kitchen-server.vercel.app/allservices')
         .then(res=>res.json())
         .then(data=>setServices(data))
 

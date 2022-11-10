@@ -19,7 +19,7 @@ export const router =createBrowserRouter([
 {path:"/signup",element:<SignUp></SignUp>},
 {path:'/services',element:<AllServices></AllServices>},
 {path:'/services/:id',element:<ServicesDetails></ServicesDetails>,
-loader:({params})=>fetch(`http://localhost:5000/allservices/${params.id}`)
+loader:({params})=>fetch(`https://amer-kitchen-server.vercel.app/allservices/${params.id}`)
 },
 {path:'/addservice',element:<PrivetRouter><AddService></AddService></PrivetRouter>},
 {path:'/myreviews',element:<PrivetRouter><MyReviews></MyReviews></PrivetRouter>}

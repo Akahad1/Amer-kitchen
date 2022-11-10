@@ -42,7 +42,7 @@ const Login = () => {
             console.log(currentUser)
 
 
-            fetch('http://localhost:5000/jwt',{
+            fetch('https://amer-kitchen-server.vercel.app/jwt',{
               method : "POST",
               headers:{
                 'content-type': "application/json"

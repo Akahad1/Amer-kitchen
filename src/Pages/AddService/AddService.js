@@ -18,7 +18,7 @@ const AddService = () => {
       photoURL:imgurl,
       description :description
     }
-    fetch('http://localhost:5000/allservices',{
+    fetch('https://amer-kitchen-server.vercel.app/allservices',{
             method: "POST",
             headers: {
                 "content-type" : "application/json"
